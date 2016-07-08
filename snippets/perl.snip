@@ -1,0 +1,195 @@
+snippet u
+    #!/usr/bin/env perl
+    use strict;
+    use warnings;
+    use autodie;
+    use feature 'say';
+
+snippet ut
+    #!/usr/bin/env perl
+    use strict;
+    use warnings;
+    use utf8;
+    use Test::More;
+
+    subtest => sub {
+    };
+
+    done_testing;
+
+snippet d
+    use Data::Dump qw(dump);
+    warn dump
+
+snippet dd
+    use Data::Dumper;
+    local $Data::Dumper::Indent = 1;
+    local $Data::Dumper::Terse  = 1;
+    warn Dumper
+
+snippet dds
+    use Data::Dump::Streamer qw(Dumper);
+    warn Dumper
+
+snippet ddn
+        use Data::Dumper;
+        {
+                package Data::Dumper;
+                sub qquote { return shift; }
+        }
+        local $Data::Dumper::Useperl = 1;
+
+snippet querylog
+    require DBIx::QueryLog;
+    my $guard = DBIx::QueryLog->guard();
+
+snippet c
+    use Carp qw/croak/;
+
+snippet sub
+    sub ${1:fnc} {
+        my $class = shift;
+        my $args = ref $_[0] ? $_[0] : +{@_};
+
+        ${2:code}
+
+    }
+
+snippet l
+    use Class::Accessor::Lite
+
+snippet ll
+    Clas::Accessor::Lite->mk_accessors(${1:accessors});
+
+snippet subtest
+    subtest "${1}" => sub {
+        ${2}
+    };
+
+snippet s
+    my ($self) = @_;
+
+snippet ex
+    use parent qw(Exporter);
+    our @EXPORT_OK = qw();
+
+snippet plack
+    use Plack::Request;
+    sub {
+        my $req = Plack::Request->new($_[0]);
+        given ($req->path) {
+            when ('/') {
+                $req->param('');
+                return [200, ["Content-Type" => "text/html"], ['200 OK']];
+            }
+        }
+        return [404, ["Content-Type" => "text/plain"], ['404 Not Found']];
+    };
+
+snippet file
+    use Path::Class qw(file);
+    my @lines = file(__FILE__)->dir->file('/path/to/file')->slurp;
+
+snippet r200
+    [ 200, ['Content-Type', 'text/plain'], ['200 OK'] ]
+
+snippet r404
+    [ 404, ['Content-Type', 'text/plain'], ['404 Not Found'] ]
+
+snippet wi
+    with '${1:Model::Role::Name}';
+
+snippet immu
+    __PACKAGE__->meta->make_immutable;
+    no Mouse;
+
+    1;
+
+snippet coerce
+    coerce '${1}'
+        => from '${2:Int|Str|ArrayRef|HashRef}',
+        => via { ${3} };
+
+snippet pack
+    package ${1:Model::Name};
+    use Mouse;
+
+snippet packr
+    package ${1:Model::Name};
+    use Mouse::Role;
+
+    requires '${1:ModuleName}';
+
+snippet packm
+    package main;
+    ${1}
+
+snippet extends
+    extends '${1:Model::Name}';
+
+snippet requires
+    requires qw/${1:Model::Name}/;
+
+snippet print
+    print "${1}\n";
+
+snippet '127
+    '127.0.0.1'
+
+snippet new
+    sub new {
+        my $class = shift;
+        my %args = @_ == 1 ? %{$_[0]} : @_;
+        bless \%args, $class;
+    }
+
+snippet debug
+    $c->log->debug("######## ${1} = ", dump ${2});
+
+snippet dbi
+        use DBI;
+        my $dbh = DBI->connect('DBI:mysql:${1:databasename}', '${2:username}', '${3:password}', {
+                AutoCommit => 1,
+                PrintError => 0,
+                RaiseError => 1,
+                ShowErrorStatement => 1,
+                AutoInactiveDestroy => 1,
+                mysql_enable_utf8 => 1,
+                mysql_auto_reconnect => 0,
+        });
+
+snippet select
+    my $rows = $dbh->selectall_arrayref("SELECT * FROM ${1:table}", {Slice=>{}});
+
+snippet insert
+    my $rc = $dbh->do('INSERT INTO ${1:table_name} (${2:column_name}) VALUES (${3:?, ?, ?})') || die $dbh->errstr;
+
+snippet do
+    my $rc = $dbh->do('${1}') || die $dbh->errstr;
+
+snippet hires
+    use Time::HiRes;
+    my $time_start = Time::HiRes::time;
+    my $time_end   = Time::HiRes::time;
+    printf("%5.3f(sec)\n", $time_end - $time_start);
+
+snippet ok
+    ok ${1:bool}, ${2:explain};
+
+snippet is
+    is ${1:got},  ${2:expected}, ${3:explain};
+
+snippet isnt
+    isnt ${1:got},  ${2:expected}, ${3:explain};
+
+snippet like
+    like ${1:got},  qr/${2:expected}/, ${3:explain};
+
+snippet unlike
+    unlike ${1:got},  qr/${2:expected}/, ${3:explain};
+
+snippet is_deeply
+    is_deeply ${1:got}, ${2:expected}, ${3:explain};
+
+
+
