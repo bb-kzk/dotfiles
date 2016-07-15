@@ -122,21 +122,22 @@ set cursorline
 
 ""------- vundle関連 -----
 
-
-filetype plugin on
+filetype off
 
 " vundleを使うためのおまじない
-set rtp+=~/.vim/vundle/
-call vundle#rc('~/.vim/bundle')
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc('~/.vim/bundle/vundle')
 
 " 使うプラグインを指定
 Bundle 'petdance/vim-perl'
 Bundle 'hotchpotch/perldoc-vim'
 Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'Shougo/neosnippet'
 Bundle 'thinca/vim-quickrun'
 
+filetype plugin indent on
+filetype on
+syntax on
 
 
 ""------- Perl開発 -----
