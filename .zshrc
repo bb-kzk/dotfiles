@@ -167,4 +167,25 @@ esac
 
 
 
+########################################
+# PATHをexportする際に、echoで.zshrcへ追記していったやり方を変更する。
+# http://www.bunkei-programmer.net/entry/2015/05/22/004837
+
+# Get the aliases and functions
+if [ -f ~/.zshrc ]; then
+    . ~/.zshrc
+fi
+
+# load bash flagment
+if [ -d "${HOME}/.zsh.d" ] ; then
+    for f in "${HOME}"/.zsh.d/*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+export PATH
+
 
