@@ -50,4 +50,4 @@ export PATH LANG EDITOR
 # .inputrcの読み込み
 [ -f ~/.inputrc ] && bind -f ~/.inputrc
 
-
+alias ll=ls -lrta
