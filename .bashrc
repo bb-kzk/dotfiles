@@ -50,4 +50,14 @@ export PATH LANG EDITOR
 # .inputrcの読み込み
 [ -f ~/.inputrc ] && bind -f ~/.inputrc
 
-alias ll=ls -lrta
+# Alias
+alias la='ls -a'
+alias ll="ls -lrtkaF"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+alias vi='vim'
+
+
+
