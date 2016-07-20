@@ -125,8 +125,10 @@ set cursorline
 filetype off
 
 " vundleを使うためのおまじない
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc('~/.vim/bundle/vundle')
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
 
 " 使うプラグインを指定
 Bundle 'petdance/vim-perl'
@@ -135,8 +137,9 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'thinca/vim-quickrun'
 
+call vundle#end()
 filetype plugin indent on
-filetype on
+"filetype on
 syntax on
 
 
