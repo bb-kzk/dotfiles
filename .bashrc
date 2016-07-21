@@ -59,5 +59,5 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias vi='vim'
 
-
+alias gdiff='git difftool'
 

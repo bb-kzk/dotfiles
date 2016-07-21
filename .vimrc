@@ -120,6 +120,28 @@ set cursorline
 
 
 
+
+""------- dein関連 -----
+
+"filetype off
+
+"set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+"call dein#begin(expand('~/.vim/dein'))
+
+"call dein#add('Shougo/dein.vim')
+"call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+
+"call dein#add('Shougo/neocomplete.vim')
+"call dein#add('Shougo/neomru.vim')
+"call dein#add('Shougo/neosnippet')
+
+"call dein#end()
+
+"filetype plugin indent on
+"syntax on
+
+
 ""------- vundle関連 -----
 
 filetype off
@@ -134,12 +156,11 @@ Plugin 'VundleVim/Vundle.vim'
 Bundle 'petdance/vim-perl'
 Bundle 'hotchpotch/perldoc-vim'
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
+"Bundle 'Shougo/neosnippet'
 Bundle 'thinca/vim-quickrun'
 
 call vundle#end()
 filetype plugin indent on
-"filetype on
 syntax on
 
 
