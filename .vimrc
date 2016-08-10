@@ -86,8 +86,8 @@ set shiftwidth=2
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set smarttab
 
-" ターミナル上からの張り付けを許可
-set paste
+" ターミナル上からの張り付けを許可 => やはりフリーズしてバグるから許可しない。
+"set paste
 
 "http://peace-pipe.blogspot.com/2006/05/vimrc-vim.html
 "set tabstop=2
