@@ -87,7 +87,7 @@ set shiftwidth=2
 set smarttab
 
 " ターミナル上からの張り付けを許可
-set paste
+"set paste "これを設定してると、よく報告されているneocomplcacheで問題が発生する。
 
 "http://peace-pipe.blogspot.com/2006/05/vimrc-vim.html
 "set tabstop=2
@@ -104,6 +104,9 @@ set paste
 " 検索結果をハイライトする
 set hlsearch
 
+" F3キーでハイライトを解除
+nnoremap <F3> :noh<CR>
+
 " ルーラー,行番号を表示
 set ruler
 set number
@@ -118,7 +121,15 @@ set cmdheight=1
 set cursorline
 
 
-
+""------- vimdiff -----
+"highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+"highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+"highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+"highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
+hi DiffAdd    ctermfg=black ctermbg=2
+hi DiffChange ctermfg=black ctermbg=3
+hi DiffDelete ctermfg=black ctermbg=6
+hi DiffText   ctermfg=black ctermbg=7
 
 
 ""------- dein関連 -----
@@ -158,9 +169,12 @@ Bundle 'hotchpotch/perldoc-vim'
 Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neosnippet'
 Bundle 'thinca/vim-quickrun'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 call vundle#end()
 filetype plugin indent on
+colorscheme Tomorrow-Night
 syntax on
 
 
