@@ -74,6 +74,7 @@ set smartcase
 "set smartindent
 "set autoindent
 set nosmartindent
+set noautoindent
 
 " フォーマット揃えをコメント以外有効にする
 set formatoptions-=c
