@@ -1,13 +1,9 @@
-
 # Escape key is C-t, literal is a.
 escape ^Ta
 
 # ステータスバーの表示を変更する
 # http://tm.root-n.com/unix:command:screen
 hardstatus alwayslastline "[%Y-%m-%d(%D) %c:%s] %`%-w%{=b bw}%n %t%{-}%+w $STY"
-
-# I like a large scrollback buffer.
-defscrollback 1000
 
 #
 bind F eval 'scrollback 0' 'scrollback 1000' 'echo "scrollback buffer cleared"'
@@ -16,14 +12,27 @@ bind F eval 'scrollback 0' 'scrollback 1000' 'echo "scrollback buffer cleared"'
 startup_message off
 
 
-nethack on
+# nethack on
 
 
 vbell off
 
 
+# http://wadap.hatenablog.com/entry/20080114/1200288402
+autodetach on
+#bell_msg "^G"
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+defscrollback 10000
+caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+
+#bind n screen
+#bind h prev
+#bind j next
+#bind l windowlist
 
 
-source '.screenrc.local'
+#source '.screenrc.local'
 
 
