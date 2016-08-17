@@ -1,0 +1,25 @@
+
+# Escape key is C-t, literal is a.
+escape ^Ta
+
+# I like a large scrollback buffer.
+defscrollback 1000
+
+#
+bind F eval 'scrollback 0' 'scrollback 1000' 'echo "scrollback buffer cleared"'
+
+# 起動時のメッセージを消す
+startup_message off
+
+
+nethack on
+
+
+vbell off
+
+
+
+
+source '.screenrc.local'
+
+

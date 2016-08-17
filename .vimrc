@@ -73,6 +73,7 @@ set smartcase
 "自動インデントを有効化する
 "set smartindent
 "set autoindent
+:set nosmartindent
 
 " フォーマット揃えをコメント以外有効にする
 set formatoptions-=c
@@ -82,9 +83,16 @@ set formatoptions-=c
 
 
 " Vimが挿入するインデントの幅
-set shiftwidth=2
+"set shiftwidth=2
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
-set smarttab
+"set smarttab
+
+"set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
+set list
+set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
+
+
 
 " ターミナル上からの張り付けを許可
 "set paste "これを設定してると、よく報告されているneocomplcacheで問題が発生する。
