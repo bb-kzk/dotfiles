@@ -43,9 +43,16 @@ EDITOR=vim
 LANG=ja_JP.UTF-8
 
 # パスの設定
+#PATH=$HOME/usr/bin:$PATH:~/bin
 PATH=$PATH:~/bin
 
-export PATH LANG EDITOR
+#PERL_LWP_SSL_VERIFY_HOSTNAME=0
+#PERL_NET_HTTPS_SSL_SOCKET_CLASS=Net::SSL
+
+#HTTPS_CA_FILE=/etc/pki/tls/certs/ca-bundle.crt
+#CURL_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
+
+export PATH LANG EDITOR #PERL_LWP_SSL_VERIFY_HOSTNAME
 
 # .inputrcの読み込み
 [ -f ~/.inputrc ] && bind -f ~/.inputrc

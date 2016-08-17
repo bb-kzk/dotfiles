@@ -1,0 +1,29 @@
+
+# Escape key is C-t, literal is a.
+escape ^Ta
+
+# ステータスバーの表示を変更する
+# http://tm.root-n.com/unix:command:screen
+hardstatus alwayslastline "[%Y-%m-%d(%D) %c:%s] %`%-w%{=b bw}%n %t%{-}%+w $STY"
+
+# I like a large scrollback buffer.
+defscrollback 1000
+
+#
+bind F eval 'scrollback 0' 'scrollback 1000' 'echo "scrollback buffer cleared"'
+
+# 起動時のメッセージを消す
+startup_message off
+
+
+nethack on
+
+
+vbell off
+
+
+
+
+source '.screenrc.local'
+
+

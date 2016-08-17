@@ -73,6 +73,7 @@ set smartcase
 "自動インデントを有効化する
 "set smartindent
 "set autoindent
+set nosmartindent
 
 " フォーマット揃えをコメント以外有効にする
 set formatoptions-=c
@@ -82,9 +83,16 @@ set formatoptions-=c
 
 
 " Vimが挿入するインデントの幅
-set shiftwidth=2
+"set shiftwidth=2
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
-set smarttab
+"set smarttab
+
+"set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
+set list
+set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
+
+
 
 " ターミナル上からの張り付けを許可 => やはりフリーズしてバグるから許可しない。
 "set paste
@@ -104,6 +112,9 @@ set smarttab
 " 検索結果をハイライトする
 set hlsearch
 
+" F3キーでハイライトを解除
+nnoremap <F3> :noh<CR>
+
 " ルーラー,行番号を表示
 set ruler
 set number
@@ -118,7 +129,15 @@ set cmdheight=1
 set cursorline
 
 
-
+""------- vimdiff -----
+"highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+"highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+"highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+"highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
+hi DiffAdd    ctermfg=black ctermbg=2
+hi DiffChange ctermfg=black ctermbg=3
+hi DiffDelete ctermfg=black ctermbg=6
+hi DiffText   ctermfg=black ctermbg=7
 
 
 ""------- dein関連 -----
@@ -158,9 +177,12 @@ Bundle 'hotchpotch/perldoc-vim'
 Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neosnippet'
 Bundle 'thinca/vim-quickrun'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 call vundle#end()
 filetype plugin indent on
+colorscheme Tomorrow-Night
 syntax on
 
 
