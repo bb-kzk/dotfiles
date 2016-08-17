@@ -2,6 +2,10 @@
 # Escape key is C-t, literal is a.
 escape ^Ta
 
+# ステータスバーの表示を変更する
+# http://tm.root-n.com/unix:command:screen
+hardstatus alwayslastline "[%Y-%m-%d(%D) %c:%s] %`%-w%{=b bw}%n %t%{-}%+w $STY"
+
 # I like a large scrollback buffer.
 defscrollback 1000
 
