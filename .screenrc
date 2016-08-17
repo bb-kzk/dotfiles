@@ -1,12 +1,34 @@
 # Escape key is C-t, literal is a.
-escape ^Ta
+#escape ^Ta
+escape ^Wa
 
 # ステータスバーの表示を変更する
 # http://tm.root-n.com/unix:command:screen
-hardstatus alwayslastline "[%Y-%m-%d(%D) %c:%s] %`%-w%{=b bw}%n %t%{-}%+w $STY"
+#hardstatus alwayslastline "[%Y-%m-%d(%D) %c:%s] %`%-w%{=b bw}%n %t%{-}%+w $STY"
+
+# http://qiita.com/t_cyrill/items/54ffb13918cb421a961b
+#hardstatus alwayslastline '%{= kw}%02c:%s %{= .y}%H %L=%{= .b}%-w%46>%{= .r}%n %t*%{= .b}%+w%-16=%{= .y}[%l]'
+
+
+#caption always '%?%F%{= gW}%:%{= Kk}%?%2n%f%07=%t%='
+#hardstatus alwayslastline '%m/%d %02c:%s %{= .g}%H%{-} %L=%-w%45L>%{= g.}%n %t%{-}%+w %-17<%=%{= .y}(%l)'
+#windowlist title  '%{u .g}Num Flags Title%='
+#windowlist string '%{.g}%3n %{.y}%f%09=%{-} %t %='
+
+
+hardstatus off
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
+
+# コレ結構良い
+#hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
+
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
 #
-bind F eval 'scrollback 0' 'scrollback 1000' 'echo "scrollback buffer cleared"'
+#bind F eval 'scrollback 0' 'scrollback 1000' 'echo "scrollback buffer cleared"'
 
 # 起動時のメッセージを消す
 startup_message off
