@@ -24,7 +24,7 @@ hardstatus off
 #hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
 #hardstatus alwayslastline
-hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
+#hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
 #hardstatus on
 #hardstatus alwayslastline
@@ -32,7 +32,7 @@ hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%
 #caption string '%{= kW}%-Lw%{= kG}%50> %n%f* %t%{= kW}%+Lw%&lt; %{= kG}%-=%D %d %M %Y  %c:%s%{-}'
 #caption always
 
-caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+#caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
 
 
 #
@@ -59,7 +59,24 @@ defscrollback 10000
 #bind n screen
 #bind h prev
 #bind j next
-#bind l windowlist
+bind l windowlist
+
+
+
+
+
+# for Mac
+term xterm-256color
+termcapinfo xterm-256color 'is=^[r^[mJ^[H^[?7h^[?1;4;6l'
+
+# for Ubuntu?
+#attrcolor b ".I"
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#defbce on
+
+
+
+
 
 
 #source '.screenrc.local'

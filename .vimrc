@@ -229,7 +229,10 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 
 
-
+if &term =~ "xterm-256color"
+    set t_Co=256
+    syntax on
+endif
 
 
 

@@ -44,7 +44,7 @@ LANG=ja_JP.UTF-8
 
 # パスの設定
 #PATH=$HOME/usr/bin:$PATH:~/bin
-PATH=$PATH:~/bin
+PATH=$HOME/usr/bin:$PATH:~/bin
 
 #PERL_LWP_SSL_VERIFY_HOSTNAME=0
 #PERL_NET_HTTPS_SSL_SOCKET_CLASS=Net::SSL
