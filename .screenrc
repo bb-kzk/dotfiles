@@ -1,6 +1,6 @@
 # Escape key is C-t, literal is a.
 #escape ^Ta
-escape ^Wa
+#escape ^Wa
 
 # ステータスバーの表示を変更する
 # http://tm.root-n.com/unix:command:screen
@@ -41,7 +41,7 @@ vbell off
 
 
 # http://wadap.hatenablog.com/entry/20080114/1200288402
-autodetach on
+#autodetach on
 #bell_msg "^G"
 defkanji utf-8
 defencoding utf-8
