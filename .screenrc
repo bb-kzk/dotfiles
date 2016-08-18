@@ -1,6 +1,6 @@
 # Escape key is C-t, literal is a.
 #escape ^Ta
-escape ^Wa
+#escape ^Wa
 
 # ステータスバーの表示を変更する
 # http://tm.root-n.com/unix:command:screen
@@ -23,9 +23,17 @@ hardstatus off
 # コレ結構良い
 #hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
+#hardstatus alwayslastline
+hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
-hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
+#hardstatus on
+#hardstatus alwayslastline
+#hardstatus string "%= %3n %t%? [ %h ]%? %="
+#caption string '%{= kW}%-Lw%{= kG}%50> %n%f* %t%{= kW}%+Lw%&lt; %{= kG}%-=%D %d %M %Y  %c:%s%{-}'
+#caption always
+
+caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+
 
 #
 #bind F eval 'scrollback 0' 'scrollback 1000' 'echo "scrollback buffer cleared"'
@@ -47,7 +55,6 @@ defkanji utf-8
 defencoding utf-8
 encoding utf-8 utf-8
 defscrollback 10000
-caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
 
 #bind n screen
 #bind h prev
