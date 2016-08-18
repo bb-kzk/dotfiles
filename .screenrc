@@ -49,7 +49,7 @@ vbell off
 
 
 # http://wadap.hatenablog.com/entry/20080114/1200288402
-autodetach on
+#autodetach on
 #bell_msg "^G"
 defkanji utf-8
 defencoding utf-8
