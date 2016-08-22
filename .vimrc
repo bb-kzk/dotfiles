@@ -99,10 +99,12 @@ set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 "set paste
 
 "http://peace-pipe.blogspot.com/2006/05/vimrc-vim.html
-"set tabstop=2
-"set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 "set softtabstop=0
-"set expandtab
+
+" 挿入されるTAB文字を、純粋なスペースに変換する
+set expandtab
 
 
 ""-------Look&Feel-----
@@ -176,7 +178,7 @@ Plugin 'VundleVim/Vundle.vim'
 Bundle 'petdance/vim-perl'
 Bundle 'hotchpotch/perldoc-vim'
 Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet'
 Bundle 'thinca/vim-quickrun'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'chriskempson/vim-tomorrow-theme'
@@ -224,9 +226,11 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " for snippets
-imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-n>"
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+"imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-n>"
+"smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
+" 新しくなったneosnippetではコチラ
+"imap <expr><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<C-k>"
 
 
 if &term =~ "xterm-256color"

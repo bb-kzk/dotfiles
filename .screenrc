@@ -61,8 +61,9 @@ defscrollback 10000
 #bind j next
 bind l windowlist
 
-
-
+# xoffをけしておく。キー入力が出力へ反映されないモード（xoff）を防いでおく。
+# http://iandeth.dyndns.org/mt/ian/archives/000646.html#s3
+bind s  # reset s key
 
 
 # for Mac
