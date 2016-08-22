@@ -24,7 +24,7 @@ hardstatus off
 #hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
 #hardstatus alwayslastline
-#hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
+hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
 
 #hardstatus on
 #hardstatus alwayslastline
@@ -68,8 +68,13 @@ bind s  # reset s key
 
 # for Mac
 term xterm-256color
-termcapinfo xterm-256color ti@:te@ 'is=^[r^[mJ^[H^[?7h^[?1;4;6l'
-termcapinfo ti@:te@
+termcapinfo xterm-256color 'is=^[r^[mJ^[H^[?7h^[?1;4;6l'
+#termcapinfo ti@:te@
+termcapinfo linux ti@:te@
+termcapinfo xterm ti@:te@
+termcapinfo xterm-256color ti@:te@
+
+
 
 # for Ubuntu?
 #attrcolor b ".I"
