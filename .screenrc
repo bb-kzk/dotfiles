@@ -59,7 +59,7 @@ defscrollback 10000
 #bind n screen
 #bind h prev
 #bind j next
-bind l windowlist
+#bind l windowlist
 
 # xoffをけしておく。キー入力が出力へ反映されないモード（xoff）を防いでおく。
 # http://iandeth.dyndns.org/mt/ian/archives/000646.html#s3
