@@ -42,6 +42,9 @@ $ exec $SHELL -l
 
 # cpanm
 $ plenv install-cpanm
+
+# carton
+$ plenv exec cpanm Carton
 ```
 
 ### 
