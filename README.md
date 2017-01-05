@@ -31,13 +31,17 @@ $ :PluginInstall
 
 ### perl install (plenv, perl_build, cpanm, cartion)
 https://github.com/tokuhirom/plenv
+
 http://qiita.com/uchiko/items/127b91001b45ad0312f0
 ```
 $ git clone https://github.com/tokuhirom/plenv.git ~/.plenv
 $ echo 'export PATH="$HOME/.plenv/bin:$PATH"' >> ~/.bash_profile
 $ echo 'eval "$(plenv init -)"' >> ~/.bash_profile
 $ exec $SHELL -l
+省略
 
+# cpanm
+$ plenv install-cpanm
 ```
 
 ### 
